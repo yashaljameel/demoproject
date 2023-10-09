@@ -16,10 +16,7 @@ class BrandsController < ApplicationController
 
   def create
     @documnet = Documnet.new(documnet_create_params)
-    
-    
-    binding.pry
-    
+
     if @documnet.save
       CrudNotificationMailer.create_notification(@documnet).deliver_now
       redirect_to brands_path
