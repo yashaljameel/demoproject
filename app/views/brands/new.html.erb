@@ -1,0 +1,19 @@
+<h1>Brand#new</h1>
+<%= @documnet.title %>
+<p>Find me in app/views/brand/edit.html.erb</p>
+
+<%= form_with(model: @documnet, url: brands_path, local: true, method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+<div class="actions">
+<button onclick="alert('Post has been Created!')"> <%= form.submit "Create Post"%>  </button>
+  </div>
+<% end %>
